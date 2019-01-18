@@ -12,8 +12,13 @@ const config = {
         rules: [
             {
                 test: /\.(js|jsx)$/,
+                loader: 'babel-loader',
                 exclude: /node_modules/,
-                use: 'babel-loader'
+
+                query: {
+                    presets: ['react', 'es2015'],
+                    plugins: ['transform-class-properties']
+                }
             }
         ]
     }
